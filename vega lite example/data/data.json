@@ -1,0 +1,64 @@
+[
+			//MALE
+			{
+			"race": "OTHER",
+			"SUM(charge)": "201",
+			"sex" : 1
+			},
+			{
+			"race": "WHITE",
+			"SUM(charge)": "1965",
+			"sex" : 1
+			},
+			{
+			"race": "HISPANIC",
+			"SUM(charge)": "5716",
+			"sex" : 1
+			},
+			{
+			"race": "BLACK",
+			"SUM(charge)": "10407",
+			"sex" : 1
+			},
+			{
+			"race": "ASIAN",
+			"SUM(charge)": "86",
+			"sex" : 1
+			},
+			{
+			"race": "NATIVE AMERICAN",
+			"SUM(charge)": "0",
+			"sex" : 1
+			},
+			//FEMALE
+			{
+			"race": "OTHER",
+			"SUM(charge)": "425",
+			"sex" : 2
+			},
+			{
+			"race": "WHITE",
+			"SUM(charge)": "2063",
+			"sex" : 2
+			},
+			{
+			"race": "HISPANIC",
+			"SUM(charge)": "2027",
+			"sex" : 2
+			},
+			{
+			"race": "NATIVE AMERICAN",
+			"SUM(charge)": "2",
+			"sex" : 2
+			},
+			{
+			"race": "BLACK",
+			"SUM(charge)": "4104",
+			"sex" : 2
+			},
+			{
+			"race": "ASIAN",
+			"SUM(charge)": "0",
+			"sex" : 2
+			}
+		]

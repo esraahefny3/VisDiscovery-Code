@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>visDiscovery</title>
+</head>
+<body>
+<div id="visDiscovery">
+	
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega/2.6.5/vega.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/1.3.1/vega-lite.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/2.2.0/vega-embed.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+	// Assign the specification to a local variable vlSpec.
+  	var vlSpec = {
+	  "data": {
+	  	"values" : [
+			//MALE
+			{
+			"xAxis": "OTHER",
+			"yAxis": "201",
+			"queryNumber" : 1
+			},
+			{
+			"xAxis": "WHITE",
+			"yAxis": "1965",
+			"queryNumber" : 1
+			},
+			{
+			"xAxis": "HISPANIC",
+			"yAxis": "5716",
+			"queryNumber" : 1
+			},
+			{
+			"xAxis": "BLACK",
+			"yAxis": "10407",
+			"queryNumber" : 1
+			},
+			{
+			"xAxis": "ASIAN",
+			"yAxis": "86",
+			"queryNumber" : 1
+			},
+			{
+			"xAxis": "NATIVE AMERICAN",
+			"yAxis": "0",
+			"queryNumber" : 1
+			},
+			//FEMALE
+			{
+			"xAxis": "OTHER",
+			"yAxis": "425",
+			"queryNumber" : 2
+			},
+			{
+			"xAxis": "WHITE",
+			"yAxis": "2063",
+			"queryNumber" : 2
+			},
+			{
+			"xAxis": "HISPANIC",
+			"yAxis": "2027",
+			"queryNumber" : 2
+			},
+			{
+			"xAxis": "NATIVE AMERICAN",
+			"yAxis": "2",
+			"queryNumber" : 2
+			},
+			{
+			"xAxis": "BLACK",
+			"yAxis": "4104",
+			"queryNumber" : 2
+			},
+			{
+			"xAxis": "ASIAN",
+			"yAxis": "0",
+			"queryNumber" : 2
+			}
+		]
+	  },
+	  "transform": {
+	    "calculate": [{"field": "Query", "expr": "datum.queryNumber == 1 ? \"First Qeury\" : \"Second Qeury\""}]
+	  },
+	  "transform": {
+	    "calculate": {
+	      "expr": "datum.queryNumber == 1 ? \"First Qeury\" : \"Second Qeury\"",
+	      "field": "Query"
+	    }
+	  }
+	  "mark": "bar",
+	  "encoding": {
+	    "column": {
+	      "field": "xAxis", "type": "ordinal",
+	      "scale": {"padding": 4},
+	      "axis": {"title" : "Race", "orient": "bottom", "axisWidth": 1, "offset": -8}
+	    },
+	    "y": {
+	      "field": "yAxis", "type": "quantitative",
+	      "axis": {"title": "SUM (Charge)", "grid": false},
+	      "scale": {"bandSize": 40},
+	    },
+	    "x": {
+	      "field": "Query", "type": "nominal",
+	      "scale": {"bandSize": 40},
+	      "axis": false
+	    },
+	    "color": {
+	      "field": "Query", "type": "nominal",
+	      "scale": {"range": ["#659CCA", "#EA98D2"]}
+	    }
+	  },
+	  "config": {"facet": {"cell": {"strokeWidth": 0}}}
+	};
+
+
+  var embedSpec = {
+    mode: "vega-lite",  // Instruct Vega-Embed to use the Vega-Lite compiler
+    spec: vlSpec
+    // You can add more vega-embed configuration properties here.
+    // See https://github.com/vega/vega/wiki/Embed-Vega-Web-Components#configuration-propeties for more information.
+  };
+
+  // Embed the visualization in the container with id `vis`
+  vg.embed("#visDiscovery", embedSpec, function(error, result) {
+    // Callback receiving the View instance and parsed Vega spec
+    // result.view is the View, which resides under the '#vis' element
+  });
+</script>
+</body>
+</html>

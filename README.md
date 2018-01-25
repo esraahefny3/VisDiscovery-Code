@@ -1,2 +1,2 @@
-# VisDiscovery private repo
-BSc. Graduation Project 
+# GraduationProject
+A data visualization cloud enabled system.
